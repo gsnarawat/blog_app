@@ -4,9 +4,10 @@
       <%= link_to "Blog_lab", root_path, id: "logo" %>
       <nav>
         <ul class="nav pull-right">
-          <li><%= link_to "POST", root_path %></li>
+          
 		  <% if signed_in? %>
-          <li><%= link_to "PROFILE", "#edit" %></li>
+          <li><%= link_to "POST", postnew_path %></li>
+		  <li><%= link_to "PROFILE", "#edit" %></li>
 		  <li><%= link_to "LOGOUT", signout_path %></li>
 		  <% else %>
 		  <li><%= link_to "LOGIN", signin_path %></li>

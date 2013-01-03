@@ -19,6 +19,8 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'bcrypt-ruby', '3.0.1'
+  gem 'will_paginate', '3.0.3'
+  gem 'bootstrap-will_paginate', '0.0.6'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'
