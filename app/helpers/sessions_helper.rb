@@ -15,7 +15,12 @@ module SessionsHelper
   
   def sign_out
     self.current_user = nil
-    cookies.delete
-end
+    @current_user = session[:current_user_id] = nil
+  end
+
+ def current_user
+ @current_user ||= session[:current_user_id] &&
+      User.find_by_id(session[:current_user_id])
+ end
   
 end
