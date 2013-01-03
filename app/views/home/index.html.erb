@@ -1,20 +1,36 @@
 
 
 <h1><center>Welcome to BLoG LABS </center> </h1>
+
+<center> <%= will_paginate @posts %> </center>
+<div >
 <center>
-<%= will_paginate @posts %>
-</center>
-<ul class="posts">
-  <table border=2 align="center">
+<ul>
+  <table  align="center"  width=800>
+   	<tr> <td>
+	<table width=100%>
+	<th> <td align=center> Content </td>
+	      <td align=right> Posted </td>
+		  <td align=center> View </td>
+	</th>
+	</table>
+	</td></tr>
+	<tr> <td>
   <% @posts.each do |post| %>
-     <tr>
-     <td>    <%=  post.content %>   </td> 
-     <td>     <%= link_to "view post", post %> </td>
+  <table  border=1 width=100%>   
+	 	  
+	 <tr>
+     <td width=60% >    <%=  post.content %>   </td> 
+	 <td width=20% align=center> Posted by : <%= post.user.name %>, <br/> on <%= post.created_at.to_date %> </td>
+     <td align=center width=20% >     <%= link_to "view post", post %> </td>
 	  </tr>
+	  </table>
   <% end %>
+  </td> </tr>
   </table>
 </ul>
 
 <center>
 <%= will_paginate @posts %>
 </center>
+</div> 

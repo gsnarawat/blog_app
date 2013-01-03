@@ -6,6 +6,8 @@
         post		
       </h1>
 	  <%= @post.content %>
+	  <p> <br/> Posted by : <%= @post.user.name%>, </p>
+		<p> <br/> On:<%= @post.created_at %> </p>
     </section>
   </aside>
 </div>

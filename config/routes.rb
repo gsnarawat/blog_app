@@ -11,7 +11,7 @@ BlogApp::Application.routes.draw do
 
   root :to => "home#index"
   
-  match '/viewpost', to: 'posts#show'
+
   match '/postnew', to: 'posts#new'
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
