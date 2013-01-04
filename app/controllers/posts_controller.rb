@@ -1,5 +1,9 @@
 class PostsController < ApplicationController
 
+ before_filter :signed_in_user, only: [:new]
+
+
+
  def new   
   @post = Post.new
   end
@@ -18,8 +22,15 @@ def show
       redirect_to root_url
 	  else
 	  render 'new'
-end
-  
+	  end  
   end
+  
+  private 
+  def signed_in_user
+      unless signed_in?
+        store_location
+        redirect_to signin_url, notice: "Please sign in."
+      end
+ end
 
 end

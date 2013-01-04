@@ -1,17 +1,23 @@
 BlogApp::Application.routes.draw do
 
+  
+  
   resources :sessions, only: [:new, :create, :destroy]
-  resources :posts, only: [:new, :create, :show]
-  resources :users
   
-  
+  resources :users  
+   
+  resources :posts, only: [:new, :create, :show] do
+  resources :comments
+  end 
+   
   get "users/new"
+  
 
   get "home/index"
 
   root :to => "home#index"
   
-
+  
   match '/postnew', to: 'posts#new'
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'

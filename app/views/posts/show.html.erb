@@ -1,13 +1,17 @@
 <% provide(:title, @post.user_id) %>
 <div class="row">
   <aside class="span4">
-    <section>
-      <h1>
+<section>
+          <h1>
         post		
       </h1>
 	  <%= @post.content %>
 	  <p> <br/> Posted by : <%= @post.user.name%>, </p>
 		<p> <br/> On:<%= @post.created_at %> </p>
+		<section> <%= render @post.comments %> </section>
+		<section> <%= render 'comments/new' %> </section>
+		
     </section>
   </aside>
 </div>
+

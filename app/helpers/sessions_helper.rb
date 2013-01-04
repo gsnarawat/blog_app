@@ -22,5 +22,17 @@ module SessionsHelper
  @current_user ||= session[:current_user_id] &&
       User.find_by_id(session[:current_user_id])
  end
-  
+
+ 
+ def redirect_back_or(default)
+    redirect_to a
+    a = nil
+  end
+ 
+ 
+  def store_location
+    a = request.url
+  end
+
+ 
 end

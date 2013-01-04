@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  
+
+ before_filter :signed_in_user, only: [:index, :show]
   
   def new
   @user = User.new
@@ -24,7 +25,14 @@ class UsersController < ApplicationController
     end
   end
 
+  private 
   
+  def signed_in_user
+      unless signed_in?
+        store_location
+        redirect_to signin_url, notice: "Please sign in."
+      end
+  end
   
   
   end
